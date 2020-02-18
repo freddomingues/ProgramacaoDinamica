@@ -69,16 +69,15 @@ class Ferrovia{
             int indexMin = obterMenor();                                        //obtem o minimo sPath
             int minDist = caminhoCurto[indexMin].distancia;
             
-            if(minDist == INFINITO){                                            //se todos forem infinitos
-                System.out.println("Nao existe caminho possivel entre essas duas cidades");
-                flag = 1;
-                break;
-            }
-            else{
+//            if(minDist == INFINITO){                                            //se todos forem infinitos
+//                System.out.println("Nao existe caminho possivel entre essas duas cidades");
+//                break;
+//            }
+//            else{
                 vertAtual = indexMin;
                 inicioDoAtual = caminhoCurto[indexMin].distancia;
                 //a distancia minima a partir de startTree é ate currentVert com valor startToCurrent
-            }
+            //}
             //coloca nó atual na arvore
             listaVertices[vertAtual].estaNaArvore = true;
             nTotal++;
@@ -95,7 +94,7 @@ class Ferrovia{
     public int obterMenor(){                                                    //obtem entrada a partir de sPath com distancia minima
         int minDist = INFINITO;                                                 //assume um numero muito grande
         int indexMin = 0;
-        for(int j=1; j<nVerts; j++){                                            //para cada nó, se ele nao estiver na arvore
+        for(int j=0; j<nVerts; j++){                                            //para cada nó, se ele nao estiver na arvore
                                                                                 //e for menor que o antigo
             if( !listaVertices[j].estaNaArvore && caminhoCurto[j].distancia < minDist){
                 minDist = caminhoCurto[j].distancia;
@@ -128,15 +127,18 @@ class Ferrovia{
     }
     
     public void exibirCaminho(int inicio,int fim){
-        
-        if(flag == 1)
-            return;
-        
+
         int aux = fim;
         char pai;
-        System.out.print("Caminho mais barato de " + listaVertices[inicio].legenda + " ate "
+        System.out.print("Custo do caminho mais barato de " + listaVertices[inicio].legenda + " ate "
                 + listaVertices[fim].legenda + ": ");
-        System.out.print("(");
+        
+        if(caminhoCurto[fim].distancia == INFINITO)
+            System.out.println("Impossivel");
+        else
+            System.out.println(caminhoCurto[fim].distancia);        
+        
+        System.out.print("Caminho: (");
         while( aux != inicio){
             pai = listaVertices[caminhoCurto[aux].verticePai].legenda;
             aux = caminhoCurto[aux].verticePai;
@@ -144,11 +146,6 @@ class Ferrovia{
             
         }
         System.out.print(")");
-        System.out.print(" com custo de: ");
-        if(caminhoCurto[fim].distancia == INFINITO)
-            System.out.print("inf");
-        else
-            System.out.print(caminhoCurto[fim].distancia);
     }
 }
 
@@ -170,7 +167,7 @@ class App{
         theGraph.addAresta(3, 4, 70);
         theGraph.addAresta(4, 1, 50);
         
-        theGraph.caminho(1,0);
+        theGraph.caminho(1,4);
         System.out.println();
     }
 }
