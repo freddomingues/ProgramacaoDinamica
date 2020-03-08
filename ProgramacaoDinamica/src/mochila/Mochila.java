@@ -25,7 +25,7 @@ public class Mochila {
     public static void main(String args[]){ 
         int val[] = new int[]{4,6,8,10,12,14,16,18,20,22,24,26}; 
         int wt[] = new int[]{2,3,4,5,6,7,8,9,10,11,12,13};  
-        int  W = 100;  
+        int  W = 100; 
         int n = val.length; 
         System.out.println(mochila(W, wt, val, n)); 
     } 
