@@ -5,7 +5,7 @@ import java.util.Scanner;
  * @author fred_
  */
 
-public class Main {
+public class Enigma {
     
     public static int enigma(String mensagem, String crib){        
         int qtd = 0;
@@ -37,6 +37,6 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         String mensagem = scan.nextLine();
         String crib = scan.nextLine();
-        System.out.println(Main.enigma(mensagem, crib));
+        System.out.println(Enigma.enigma(mensagem, crib));
     }
 }
