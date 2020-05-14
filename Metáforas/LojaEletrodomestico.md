@@ -11,3 +11,5 @@ Para isso, temos outra técnica de projeto de algoritmos que é a Programação 
 Com isso, Marília terá às informações à tempo de quais itens ela deverá pegar para obter o maior lucro. Para esse caso, a solução ótima é apresentada na tabela a seguir:
 
 ![WhatsApp Image 2020-05-14 at 17 44 48](https://user-images.githubusercontent.com/44576048/81984066-a75dc080-960a-11ea-9381-b76d2ee663bc.jpeg)
+
+https://github.com/freddomingues/ProgramacaoDinamica/blob/master/ProgramacaoDinamica/src/mochila/LojaEletrodomesticos.java
