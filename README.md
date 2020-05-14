@@ -1,3 +1,3 @@
 # PIBIC
 
-Repositório destinado aos códigos produzidos para o projeto de pesquisa do PIBIC.
+Respositório destinado aos códigos e documentos produzidos durante o Programa de Incentivo a Bolsa de Iniciação Científica (PIBIC)
